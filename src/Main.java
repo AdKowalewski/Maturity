@@ -12,10 +12,10 @@ public class Main {
     }
 
     public static boolean majority(int day, int month, int year){
-        LocalDate birthDate = LocalDate.of(day, month, year);
+        LocalDate birthDate = LocalDate.of(year, month, day);
         LocalDate now = LocalDate.now();
         Period period = Period.between(birthDate, now);
-        if (period.getYears() < 18) return false;
-        return true;
+        if (period.getYears() >= 18) return true;
+        return false;
     }
 }
